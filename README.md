@@ -9,7 +9,7 @@ cuda to nodejs
 
 ## Make sure to make it run we need to update the following directory as it may be machine specific :
 
- ```"sources": [ "main.cpp",'/content/node-js-cuda/test.o'],```
+ ```"sources": [ "main.cpp",'/content/node-js-cuda/blake3-miner.o'],```
  
  ## And
  ```'library_dirs': [ '/usr/local/cuda/lib64']```
@@ -17,6 +17,6 @@ cuda to nodejs
 
 ```
 npm install --unsafe-perm
-nvcc -c  test.cu --compiler-options -fPIC
+nvcc -c  blake3-miner.cu --compiler-options -fPIC
 node index.js
    ```
