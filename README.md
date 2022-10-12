@@ -16,7 +16,7 @@ cuda to nodejs
  in the **binding.gyp**
 
 ```
-npm install --unsafe-perm -g
+npm install --unsafe-perm
 nvcc -c  test.cu --compiler-options -fPIC
 node index.js
    ```
