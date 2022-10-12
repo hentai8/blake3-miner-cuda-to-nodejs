@@ -22,22 +22,21 @@ char *mine(const char *header_string, const char *target_string);
 
 void Mine(const Nan::FunctionCallbackInfo<v8::Value> &info)
 {
-    // v8::Local<v8::Context> context = info.GetIsolate()->GetCurrentContext();
+    v8::Local<v8::Context> context = info.GetIsolate()->GetCurrentContext();
 
     if (info.Length() != 2)
     {
         Nan::ThrowTypeError("Wrong number of arguments");
         return;
     }
+    // Local<String> arg0_value = Local<String>::Cast(info[0]);
+    // String::Utf8Value arg0_string(arg0_value);
+    // char *arg0 = *arg0_string;
 
-    // v8::String::Utf8Value val(info[0]->ToString());
-    char *age = info[0]->ToString().Utf8Value().c_str();
+    // Local<String> arg1_value = Local<String>::Cast(info[1]);
+    // String::Utf8Value arg1_string(arg1_value);
+    // char *arg1 = *arg1_string;
 
-    // char *arg0 = info[0]->StringValue(context).FromJust();
-    // char *arg1 = info[1]->ToString(context)->Utf8Value(context).FromJust();
-
-    // double arg0 = info[1]->NumberValue(context).FromJust();
-    // double arg1 = info[2]->NumberValue(context).FromJust();
     char *arg0 = "0000000000000000cf0e020000000000000000000002aaced825176dd9db0701c995760a03a1f42c69b63b4b7d4090b0ff7f32477b07a0cc3c89d6f6335433def2d95ff91be838ae47212ba43794901bb0ce220200000000f6ee7f75663920ae6d8617379629d5130323e6e20c5e19cb5606c71bb97ed7e668d5130100000000000000000007b87e00ba71e3b4a9a27d79dad30a55297da63550092644b289502c8efe8f82010000000000007736f4a168656e7461693800000000000000000000000000000000000000000000000000";
     char *arg1 = "0000000fffffffffffffffffffffffff";
     char *res = mine(arg0, arg1);
